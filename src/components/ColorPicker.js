@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ColorDisplay';
+import styles from './ColorPicker.css';
 
 // eslint-disable-next-line react/prop-types
 function ColorPicker({ selectColorHandler }) {
@@ -13,7 +13,7 @@ function ColorPicker({ selectColorHandler }) {
   );
 }
     
-ColorPicker.PropTypes = {
+ColorPicker.propTypes = {
   selectColorHandler: PropTypes.func.isRequired
 };
 

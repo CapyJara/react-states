@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ColorDisplay';
+import styles from './ColorDisplay.css';
 
 // eslint-disable-next-line react/prop-types
 function ColorDisplay({ color }) {
@@ -9,7 +9,7 @@ function ColorDisplay({ color }) {
   );
 }
 
-ColorDisplay.PropTypes = {
+ColorDisplay.propTypes = {
   color: PropTypes.string.isRequired
 };
 
