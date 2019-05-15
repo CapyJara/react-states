@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ColorDisplay';
 
+// eslint-disable-next-line react/prop-types
 function ColorPicker({ selectColorHandler }) {
   return (
     <section className={styles.ColorPicker}>
