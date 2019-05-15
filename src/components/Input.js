@@ -3,23 +3,30 @@ import React, { PureComponent } from 'react';
 
 export default class displayName extends PureComponent {
   state = {
-    name: ''
+    mock: '',
+    inputState: ''
   };
 
   handleChange = ({ target }) => {
-    setTimeout(() => {
-      this.setState({ name: `${target.value}, to you too!` });
-    }, 1500);
+    this.setState({ inputState: target.value });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState({ mock: `${this.state.inputState}, to you too!` });
   }
 
   render() {
-    const { name } = this.state;
-    console.log(this.state);
+    const { mock, inputState } = this.state;
+    // console.log(this.state);
     return (
-      <section>
-        <input id="name" type="input" onChange={this.handleChange} placeholder=" Enter name here "></input>
-        <p>{name}</p>
-      </section>
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <input type="input" onChange={this.handleChange} placeholder=" Enter message here " value={inputState}></input>
+          <button>Update</button>
+        </form>
+        <p>{mock}</p>
+      </>
     );
   }
 }
